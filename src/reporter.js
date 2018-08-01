@@ -164,6 +164,7 @@ const compare = (files, masterValues = {}) => {
 }
 
 const reporter = files => {
+  console.log({ apiEnabled: api.enabled });
   if (api.enabled) api.get().then(masterValues => compare(files, masterValues))
   else compare(files)
 }
